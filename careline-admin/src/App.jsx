@@ -4,6 +4,7 @@ import Login from './pages/Login'
 import AdminDashboard from './pages/AdminDashboard'
 import Submissions from './pages/Submissions'
 import MemosManager from './pages/MemosManager'
+import Settings from './pages/Settings'
 import { supabase } from './supabase'
 
 function App() {
@@ -42,6 +43,10 @@ function App() {
         <Route
           path="/memos"
           element={session ? <MemosManager /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/settings"
+          element={session ? <Settings /> : <Navigate to="/" />}
         />
       </Routes>
     </BrowserRouter>

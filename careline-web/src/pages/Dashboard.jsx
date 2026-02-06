@@ -58,7 +58,7 @@ export default function Dashboard() {
                     <p style={{ marginBottom: '1.5rem', color: 'var(--text-light)', fontSize: '0.9rem' }}>
                         View responses from administration. No identity check required.
                     </p>
-                    <button style={{
+                    <button onClick={() => navigate('/inbox')} style={{
                         width: '100%',
                         padding: '0.75rem',
                         border: '1px solid var(--primary)',
@@ -75,7 +75,7 @@ export default function Dashboard() {
                     <p style={{ marginBottom: '1.5rem', color: 'var(--text-light)', fontSize: '0.9rem' }}>
                         Read official hospital announcements and updates.
                     </p>
-                    <button style={{
+                    <button onClick={() => navigate('/memos')} style={{
                         width: '100%',
                         padding: '0.75rem',
                         border: '1px solid var(--text-light)',

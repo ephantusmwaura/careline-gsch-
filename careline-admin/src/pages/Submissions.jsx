@@ -7,6 +7,7 @@ export default function Submissions() {
     const [loading, setLoading] = useState(true)
     const [submissions, setSubmissions] = useState([])
     const [filter, setFilter] = useState('All') // All, New, Urgent
+    const [selectedSubmission, setSelectedSubmission] = useState(null)
 
     useEffect(() => {
         const fetchSubmissions = async () => {
@@ -86,9 +87,33 @@ export default function Submissions() {
                                         {sub.content}
                                     </p>
                                 </div>
-                                <button className="btn" style={{ border: '1px solid #e2e8f0' }}>View Details</button>
+                                <button onClick={() => setSelectedSubmission(sub)} className="btn" style={{ border: '1px solid #e2e8f0', cursor: 'pointer' }}>View Details</button>
                             </div>
                         ))}
+                    </div>
+                )}
+
+                {selectedSubmission && (
+                    <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100 }}>
+                        <div style={{ background: 'white', padding: '2rem', borderRadius: '8px', width: '600px', maxWidth: '90%', maxHeight: '90vh', overflowY: 'auto' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
+                                <h2 style={{ margin: 0 }}>Submission Details</h2>
+                                <button onClick={() => setSelectedSubmission(null)} style={{ background: 'transparent', border: 'none', fontSize: '1.5rem', cursor: 'pointer' }}>&times;</button>
+                            </div>
+                            <div style={{ marginBottom: '1rem', padding: '1rem', background: '#f8fafc', borderRadius: '4px' }}>
+                                <p><strong>Type:</strong> {selectedSubmission.submission_type}</p>
+                                <p><strong>Category:</strong> {selectedSubmission.category}</p>
+                                <p><strong>Date:</strong> {new Date(selectedSubmission.created_at).toLocaleString()}</p>
+                                {selectedSubmission.is_urgent && <p style={{ color: '#ef4444', fontWeight: 'bold' }}>URGENT PRIORITY</p>}
+                            </div>
+                            <div style={{ marginBottom: '2rem' }}>
+                                <h4 style={{ marginBottom: '0.5rem' }}>Content:</h4>
+                                <p style={{ whiteSpace: 'pre-wrap', lineHeight: '1.6' }}>{selectedSubmission.content}</p>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '1rem' }}>
+                                <button onClick={() => setSelectedSubmission(null)} className="btn">Close</button>
+                            </div>
+                        </div>
                     </div>
                 )}
             </div>

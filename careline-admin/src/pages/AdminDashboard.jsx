@@ -64,7 +64,7 @@ export default function AdminDashboard() {
                     <span onClick={() => navigate('/dashboard')} style={{ color: 'white', fontWeight: 'bold', cursor: 'pointer' }}>Dashboard</span>
                     <span onClick={() => navigate('/submissions')} style={{ color: 'var(--text-muted)', cursor: 'pointer' }}>Submissions</span>
                     <span onClick={() => navigate('/memos')} style={{ color: 'var(--text-muted)', cursor: 'pointer' }}>Memos</span>
-                    <span style={{ color: 'var(--text-muted)', cursor: 'pointer' }}>Settings</span>
+                    <span onClick={() => navigate('/settings')} style={{ color: 'var(--text-muted)', cursor: 'pointer' }}>Settings</span>
                 </nav>
                 <button
                     onClick={handleLogout}
