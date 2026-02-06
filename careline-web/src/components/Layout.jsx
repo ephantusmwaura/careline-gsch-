@@ -152,9 +152,14 @@ export default function Layout({ children }) {
                     fontSize: '0.8rem',
                     background: 'var(--glass-bg)',
                     backdropFilter: 'var(--backdrop-blur)',
-                    borderTop: '1px solid var(--glass-border)'
+                    borderTop: '1px solid var(--glass-border)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.5rem'
                 }}>
-                    gsch careline service system@2026
+                    <span className="live-indicator"></span>
+                    <span>System Online • gsch careline service system@2026</span>
                 </footer>
             </div>
         </div>
