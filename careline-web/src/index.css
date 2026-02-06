@@ -1,16 +1,23 @@
 :root {
-  /* Brand Colors */
-  --primary: #0ea5e9;
-  --primary-hover: #0284c7;
-  --background: #f8fafc;
-  --text: #1e293b;
+  /* Brand Colors - Professional Off-White/Grayscale Theme */
+  --primary: #334155;
+  /* Slate-700 - Professional Dark Grey */
+  --primary-hover: #1e293b;
+  /* Slate-800 */
+  --background: #fdfdfd;
+  /* Off-white background */
+  --text: #0f172a;
+  /* Deep Slate for text */
   --text-light: #64748b;
-  
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(255, 255, 255, 0.5);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-  --backdrop-blur: blur(8px);
+  /* Slate-500 for muted text */
+
+  /* Glassmorphism - Cleaner, less blue */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  /* More opaque for professional look */
+  --glass-border: rgba(200, 200, 200, 0.4);
+  --glass-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  /* Softer shadow */
+  --backdrop-blur: blur(12px);
 
   /* Spacing & Radius */
   --radius-lg: 16px;
@@ -22,10 +29,10 @@ body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   background-color: var(--background);
-  /* Subtle mesh gradient background */
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.1) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.1) 0px, transparent 50%);
+  /* Subtle mesh gradient background - Warm/Neutral tones */
+  background-image:
+    radial-gradient(at 0% 0%, rgba(200, 200, 200, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(200, 200, 200, 0.05) 0px, transparent 50%);
   background-attachment: fixed;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
