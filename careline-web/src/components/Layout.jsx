@@ -49,6 +49,7 @@ export default function Layout({ children }) {
                     padding: '1.5rem 0',
                     position: 'sticky',
                     top: 0,
+
                     height: '100vh',
                     zIndex: 10,
                     boxShadow: '4px 0 24px rgba(0,0,0,0.02)'
@@ -140,8 +141,21 @@ export default function Layout({ children }) {
             </div>
 
             {/* Main Content */}
-            <div style={{ flex: 1, padding: '2rem', overflowY: 'auto' }}>
-                {children}
+            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
+                <main style={{ flex: 1, padding: '2rem', overflowY: 'auto' }}>
+                    {children}
+                </main>
+                <footer style={{
+                    padding: '1rem',
+                    textAlign: 'center',
+                    color: 'var(--text-light)',
+                    fontSize: '0.8rem',
+                    background: 'var(--glass-bg)',
+                    backdropFilter: 'var(--backdrop-blur)',
+                    borderTop: '1px solid var(--glass-border)'
+                }}>
+                    gsch careline service system@2026
+                </footer>
             </div>
         </div>
     )
