@@ -53,9 +53,7 @@ export default function SubmitFeedback() {
 
     return (
         <div className="container" style={{ padding: '2rem', maxWidth: '800px' }}>
-            <button onClick={() => navigate('/dashboard')} className="btn" style={{ marginBottom: '1rem', background: 'rgba(255,255,255,0.5)' }}>
-                ← Back to Dashboard
-            </button>
+
 
             <div className="glass-panel" style={{ padding: '2rem' }}>
                 <h1 style={{ color: 'var(--text)', marginBottom: '1.5rem' }}>Submit Feedback</h1>

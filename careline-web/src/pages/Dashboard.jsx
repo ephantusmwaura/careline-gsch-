@@ -14,33 +14,15 @@ export default function Dashboard() {
         }
     }, [session, navigate])
 
-    const handleLogout = () => {
-        localStorage.removeItem('careline_session')
-        navigate('/')
-    }
+
 
     if (!session) return null
 
     return (
         <div style={{ padding: '2rem', maxWidth: '1200px', margin: '0 auto' }}>
-            <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-                <div>
-                    <h1 style={{ color: 'var(--primary)', marginBottom: '0.25rem' }}>Staff Dashboard</h1>
-                    <p style={{ color: 'var(--text-light)' }}>Anonymous Session Active</p>
-                </div>
-                <button
-                    onClick={handleLogout}
-                    style={{
-                        background: 'transparent',
-                        border: '1px solid var(--text-light)',
-                        color: 'var(--text-light)',
-                        padding: '0.5rem 1rem',
-                        borderRadius: 'var(--radius-sm)',
-                        cursor: 'pointer'
-                    }}
-                >
-                    Exit Session
-                </button>
+            <header style={{ marginBottom: '2rem' }}>
+                <h1 style={{ color: 'var(--primary)', marginBottom: '0.25rem' }}>Staff Dashboard</h1>
+                <p style={{ color: 'var(--text-light)' }}>Anonymous Session Active</p>
             </header>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>

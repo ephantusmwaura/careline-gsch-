@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState } from 'react'
 
 export default function Inbox() {
-    const navigate = useNavigate()
     const [messages] = useState([])
     const [loading] = useState(false)
 
@@ -18,9 +16,7 @@ export default function Inbox() {
 
     return (
         <div className="container" style={{ padding: '2rem', maxWidth: '800px' }}>
-            <button onClick={() => navigate('/dashboard')} className="btn" style={{ marginBottom: '1rem', background: 'rgba(255,255,255,0.5)' }}>
-                ← Back to Dashboard
-            </button>
+
 
             <div className="glass-panel" style={{ padding: '2rem', minHeight: '50vh' }}>
                 <h1 style={{ color: 'var(--text)', marginBottom: '1.5rem' }}>My Inbox</h1>
